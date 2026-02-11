@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{float}
+
+\title{\Huge Long-Distance Quantum Teleportation:\\
+\large From Experimental Demonstration to Quantum Network Infrastructure}
+
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Quantum teleportation has evolved from a laboratory demonstration into a foundational primitive for scalable quantum communication. Recent advances extend teleportation across global satellite links, integrate quantum memory, and embed teleportation into multi-node network architectures. This literature review synthesizes theoretical and experimental milestones in long-distance teleportation, analyzing technological constraints, fidelity limits, and architectural implications for the emerging quantum internet. The transition from isolated experiments to deployable infrastructure marks a new phase in quantum communication research.
+\end{abstract}
+
+\section{Introduction}
+
+Quantum teleportation enables the transfer of an unknown quantum state using shared entanglement and classical communication \cite{bennett1993}. Rather than moving matter, teleportation reconstructs quantum information at a remote location. This capability underpins secure communication, distributed computation, and future quantum networks.
+
+Global analyses emphasize that quantum communication is becoming strategic infrastructure \cite{mit2019}. Educational treatments clarify teleportation as a protocol grounded in entanglement and measurement rather than speculative transport \cite{ibm}. Modern research aims to transform teleportation from proof-of-principle experiments into scalable infrastructure.
+
+This review focuses on three milestones:
+
+\begin{itemize}
+\item satellite-based teleportation
+\item teleportation with quantum memory
+\item teleportation in network architectures
+\end{itemize}
+
+These developments reveal the transition from fragile experiments to engineered systems.
+
+\section{Fundamentals of Quantum Teleportation}
+
+An unknown qubit is written as
+
+\begin{equation}
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle .
+\end{equation}
+
+Teleportation uses a Bell pair
+
+\begin{equation}
+|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle),
+\end{equation}
+
+and the joint expansion
+
+\begin{equation}
+|\psi\rangle \otimes |\Phi^+\rangle =
+\frac{1}{2}\sum_{i=0}^{3} |\Phi_i\rangle \otimes \sigma_i |\psi\rangle.
+\end{equation}
+
+Teleportation fidelity is
+
+\begin{equation}
+F = \langle \psi | \rho_{\text{out}} | \psi \rangle,
+\end{equation}
+
+where values above $2/3$ exceed classical limits \cite{popescu1994}.
+
+\subsection{Loss and Noise Models}
+
+Fiber attenuation follows
+
+\begin{equation}
+T(L) = e^{-\alpha L},
+\end{equation}
+
+while atmospheric free-space channels introduce turbulence and diffraction. These constraints motivate hybrid architectures combining fiber, satellite links, and quantum memory.
+
+\section{Satellite-Based Quantum Teleportation}
+
+Recent theoretical work by Gonzalez-Raya, Pirandola, and Sanz analyzes continuous-variable teleportation across satellite channels \cite{gonzalez2024}. Their model incorporates turbulence, diffraction, and detector inefficiency.
+
+Downlink teleportation from low-Earth orbit remains feasible, while uplink scenarios require mitigation strategies such as intermediate relay stations. The study establishes quantitative fidelity limits and bridges experiment with deployable architecture.
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox{0.8\linewidth}{Insert satellite teleportation diagram from Gonzalez-Raya et al.}}
+\caption{Satellite teleportation channel model.}
+\end{figure}
+
+\section{Teleportation with Quantum Memory}
+
+Lago-Rivera \textit{et al.} integrated multiplexed teleportation with solid-state memory \cite{lago2023}. Telecom photons were stored in atomic frequency comb memory, enabling buffering and synchronization.
+
+Memory allows repeated attempts and timing control, resembling packet buffering in classical networks. This architecture is essential for repeaters and scalable infrastructure.
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox{0.8\linewidth}{Insert teleportation-with-memory schematic}}
+\caption{Teleportation into quantum memory.}
+\end{figure}
+
+\section{Teleportation in Quantum Networks}
+
+Hermans \textit{et al.} demonstrated teleportation between non-neighbouring nodes using entanglement swapping and long-lived memory qubits \cite{hermans2022}. The system functions as a routing primitive.
+
+Teleportation becomes a network-layer protocol analogous to classical routing.
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox{0.8\linewidth}{Insert multi-node teleportation network diagram}}
+\caption{Teleportation across quantum network nodes.}
+\end{figure}
+
+\section{System-Level Integration}
+
+The three milestones address distinct bottlenecks:
+
+\begin{itemize}
+\item distance scaling (satellite)
+\item synchronization (memory)
+\item scalability (network routing)
+\end{itemize}
+
+Together they form a layered architecture for the quantum internet.
+
+\section{Open Challenges}
+
+Remaining barriers include:
+
+\begin{itemize}
+\item long-lived quantum memory
+\item quantum repeater efficiency
+\item atmospheric loss mitigation
+\item error correction integration
+\item interoperability of hybrid links
+\end{itemize}
+
+\section{Future Directions}
+
+Hybrid satellite–fiber networks may combine global reach with local reliability. Continuous-variable teleportation, error correction, and integrated photonics are active research directions.
+
+\section{Conclusion}
+
+Teleportation has progressed from laboratory curiosity to scalable communication primitive. Satellite links extend reach, memory enables coordination, and network teleportation enables routing. These advances form the foundation of the emerging quantum internet.
+
+\bibliographystyle{IEEEtran}
+
+\begin{thebibliography}{99}
+\bibliographystyle{IEEEtran}
+
+\bibitem{bennett1993}
+C. H. Bennett, G. Brassard, C. Crépeau, R. Jozsa, A. Peres, and W. K. Wootters,
+“Teleporting an unknown quantum state via dual classical and Einstein–Podolsky–Rosen channels,”
+\textit{Physical Review Letters}, vol. 70, no. 13, pp. 1895–1899, 1993.
+
+\bibitem{popescu1994}
+S. Popescu,
+“Bell’s inequalities and density matrices: Revealing ‘hidden’ nonlocality,”
+\textit{Physical Review Letters}, vol. 74, pp. 2619–2622, 1994.
+
+\bibitem{gonzalez2024}
+T. Gonzalez-Raya, S. Pirandola, and M. Sanz,
+“Satellite-based entanglement distribution and quantum teleportation with continuous variables,”
+\textit{Communications Physics}, vol. 7, article 126, 2024.
+Available: https://www.nature.com/articles/s42005-024-01612-x
+
+\bibitem{lago2023}
+D. Lago-Rivera, J. Maring, A. Kutluer, M. Mazzera, and H. de Riedmatten,
+“Multiplexed quantum teleportation of photonic qubits into solid-state quantum memory,”
+\textit{Nature Communications}, vol. 14, article 2104, 2023.
+Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC10076279/
+
+\bibitem{hermans2022}
+S. L. N. Hermans \textit{et al.},
+“Qubit teleportation between non-neighbouring nodes in a quantum network,”
+\textit{Nature}, vol. 605, pp. 663–668, 2022.
+Available: https://www.nature.com/articles/s41586-022-04697-y
+
+\bibitem{ren2017}
+J.-G. Ren \textit{et al.},
+“Ground-to-satellite quantum teleportation,”
+\textit{Nature}, vol. 549, pp. 70–73, 2017.
+
+\bibitem{yin2012}
+J. Yin \textit{et al.},
+“Quantum teleportation and entanglement distribution over 100-kilometre free-space channels,”
+\textit{Nature}, vol. 488, pp. 185–188, 2012.
+
+\bibitem{kimble2008}
+H. J. Kimble,
+“The quantum internet,”
+\textit{Nature}, vol. 453, pp. 1023–1030, 2008.
+
+\bibitem{wehner2018}
+S. Wehner, D. Elkouss, and R. Hanson,
+“Quantum internet: A vision for the road ahead,”
+\textit{Science}, vol. 362, eaam9288, 2018.
+
+\bibitem{mit2019}
+MIT Technology Review,
+“What is quantum communications?,” 2019.
+Available: https://www.technologyreview.com/2019/02/14/103409/what-is-quantum-communications/
+
+\bibitem{ibm}
+IBM Quantum Learning,
+“Quantum Teleportation Tutorial,”
+Available: https://quantum.cloud.ibm.com
+
+\end{thebibliography}
+
+\end{document}
